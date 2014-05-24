@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.1'
 # Postgres DB for ACtiveRecord
 gem 'pg'
+#devise for authorization
+gem 'devise'
 
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
