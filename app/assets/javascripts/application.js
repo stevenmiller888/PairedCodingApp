@@ -10,7 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery/jquery-1.8.3.min
+//= require ace/ace
+//= require ace/theme-twilight
+//= require ace/mode-ruby
+//= require jquery-ace.min
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
