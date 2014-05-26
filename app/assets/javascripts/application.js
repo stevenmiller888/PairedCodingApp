@@ -16,5 +16,6 @@
 //= require ace/mode-ruby
 //= require jquery-ace.min
 //= require jquery_ujs
+//= require bootstrap.min
 //= require turbolinks
 //= require_tree .

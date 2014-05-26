@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap.min
  *= require_tree .
  *= require_self
  */
@@ -19,4 +20,49 @@
 }
 .e2 {
   width: 50%;
+}
+
+h1 {
+  color: #EEE5DE;
+}
+
+h2 {
+  color: #BCD2EE;
+}
+
+h3 {
+  color: #BCD2EE;
+}
+
+body {
+  text-align: center;
+  background-image: url('http://i.imgur.com/j7KB8ov.png');
+  color: white;
+  font-family: 'Arvo', serif;
+}
+
+/*.navbar {
+  background-color: #8B6969;
+  border-radius:0;
+}*/
+
+#navbar .navbar-right > li > a {
+  color: #63B8FF;
+  font-size: 15px;
+}
+
+.navbar-brand {
+  font-size: 26px;
+  font-weight: bold;
+  font-style: italic;
+  font-style: oblique;
+  color: #458B74;
+}
+
+.icon-bar {
+  background-color: #E0FFFF;
+}
+
+.form {
+  color: black;
 }
