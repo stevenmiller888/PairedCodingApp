@@ -19,3 +19,15 @@
 //= require bootstrap.min
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+
+  var decorator = $('.e1').data('ace');
+  var decorator = $('.e2').data('ace');
+  var aceInstance = decorator.ace;
+
+  // This is the code that's in the editor at any given time
+  // decorator.element[0].value 
+
+
+});
