@@ -14,7 +14,8 @@
  *= require_tree .
  *= require_self
  */
- 
+
+ /* Text editor CSS  */
 .e1 {
   width: 50%;
 }
@@ -35,16 +36,15 @@ h3 {
 }
 
 body {
-  text-align: center;
   background-image: url('http://i.imgur.com/j7KB8ov.png');
   color: white;
   font-family: 'Arvo', serif;
 }
 
-/*.navbar {
-  background-color: #8B6969;
-  border-radius:0;
-}*/
+#edit-user {
+  position: relative;
+  left: 1000px;
+}
 
 #navbar .navbar-right > li > a {
   color: #63B8FF;
@@ -65,4 +65,8 @@ body {
 
 .form {
   color: black;
+}
+
+.navbar-right > li > a:hover {
+  color: #458B74;
 }
