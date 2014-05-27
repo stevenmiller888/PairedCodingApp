@@ -1,4 +1,3 @@
-
 <% for user in @users %>
 <div class='User'>
   <p>
@@ -23,10 +22,10 @@
   <% end %>
 </ul>
 <ul>
-  <% for user in current_user.inverse_friends %>
+  <% for friendship in current_user.inverse_friendships %>
   <li> 
-    <%= user.email %> --Added You<br />
-    <%= link_to "Code with me", friendship_path(user) %><br />
+    <%= friendship.user.email %> --Added You<br />
+    <%= link_to "Code with me", friendship_path(friendship) %><br />
     <%= link_to "Remove", friendship, data: { confirm: "Are you sure?" }, :method => :delete %>
   </li>
   <% end %>
