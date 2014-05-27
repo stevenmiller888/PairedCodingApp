@@ -26,6 +26,7 @@ class FriendshipsController < ApplicationController
   end
 
   def show
+    #Editing session
     @document = Document.find(params[:id])
   end
 
