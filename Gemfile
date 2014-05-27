@@ -7,6 +7,7 @@ gem 'pg'
 gem 'devise'
 # Use Ace for text editing
 gem 'jquery-ace-rails'
+# Enable Sass-based stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -31,5 +32,6 @@ group :development, :test do
   gem 'rails-erd'
   # Use Factory girl for better testing
   gem 'factory_girl_rails'
+  # Mute asset pipeline log
   gem 'quiet_assets'
 end
