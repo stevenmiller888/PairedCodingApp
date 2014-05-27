@@ -34,4 +34,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   # Mute asset pipeline log
   gem 'quiet_assets'
+  gem 'pry'
+  gem 'pry-rails'
 end
