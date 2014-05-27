@@ -33,3 +33,24 @@
 <p><%= link_to "Cancel my account", registration_path(resource_name), class:'btn btn-primary', data: { confirm: "Are you sure?" }, method: :delete %></p><br />
 
 <%= link_to "Back", :back, class:'btn btn-default' %>
+
+<h2>Your friends</h2>
+<ul>
+  <% for friendship in @user.friendships %>
+  <li> 
+    <%= friendship.friend.email %> 
+    <%= link_to "Code with me", friendship_path(friendship) %>
+    <%= link_to "Remove", friendship, :method => :delete %>
+  </li>
+  <% end %>
+</ul>
+
+<h2>Users who have befriended you</h2>
+<ul>
+  <% for user in @user.inverse_friends %>
+  <li> 
+    <%= user.email %> 
+  </li>
+  <% end %>
+</ul>
+
