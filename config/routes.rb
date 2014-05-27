@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'sites#index'
 
+  resources :friendships
+
   get '/about', to: 'sites#about'
   get '/contact', to: 'sites#contact'
 
