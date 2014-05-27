@@ -3,6 +3,12 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  # Setup accessible (or protected) attributes for your model
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :profile_name, presence: true, uniqueness: true 
+
   has_many :friendships
   has_many :friends, :through => :friendships
 
