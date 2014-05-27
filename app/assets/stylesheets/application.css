@@ -27,6 +27,11 @@ body {
 }
 
  /* Text editor CSS  */
+
+#editors {
+  text-align: left;
+}
+
 .e1 {
   width: 100%;
 }
