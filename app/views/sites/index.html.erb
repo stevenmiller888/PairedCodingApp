@@ -3,15 +3,3 @@
 <h1>Paired Coding</h1>
 
 <h2>Pair Program anytime, anywhere</h2>
-
-<% for user in @users %>
-<div class='User'>
-  <p>
-    <% unless user == current_user %>
-      <strong><%= user.email %></strong>
-      <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
-      <div class="clear"></div>
-    <% end %>
-  </p>
-</div>
-<% end %>
