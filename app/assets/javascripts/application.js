@@ -31,7 +31,6 @@ $(document).ready(function() {
   });
 
   // load the document from the database using the friendship id
-
   // save the value to the database with the friendship id
 
   // editor2.getSession().on('change', function(e) {

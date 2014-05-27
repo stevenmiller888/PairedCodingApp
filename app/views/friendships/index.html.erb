@@ -1,37 +1,34 @@
-
-
 <div class="row">
 
   <div class="col-md-6">
-   <h2>Add Friends</h2><br />
+   <h2>Add Friends</h2>
    <% for user in @users %>
-    <div>
       <p>
         <% unless user == current_user %>
-          <strong><%= user.email %></strong><br />
-          <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+          <%= user.email %><br/>
+          <%= link_to "Add Friend", friendships_path(friend_id: user), method: :post %>
         <% end %>
       </p>
-    </div>
   <% end %>
  </div>
 
   <div class="col-md-6">
-    <h2>Your Friends</h2><br />
-    <p>
-      <% for friendship in current_user.inverse_friendships %> 
+    <h2>Your Friends</h2>
+    <% for friendship in current_user.inverse_friendships %> 
+      <p>
         <%= friendship.user.email %>
-        <%= link_to "Code with me", friendship_path(friendship) %><br />
-        <%= link_to "Remove Friend", friendship, data: { confirm: "Are you sure?" }, :method => :delete %>
-      <% end %>
-    </p>
-    <p>
-      <% for friendship in current_user.friendships %>
+        <%= link_to "Code with me", friendship_path(friendship) %><br/>
+        <%= link_to "Remove Friend", friendship, data: { confirm: "Are you sure?" }, method: :delete %>
+      </p>
+    <% end %>
+  
+    <% for friendship in current_user.friendships %>
+      <p>
         <%= friendship.friend.email %>
-        <%= link_to "Code with me", friendship_path(friendship) %><br />
-        <%= link_to "Remove Friend", friendship, data: { confirm: "Are you sure?" }, :method => :delete %><br/><br />
-      <% end %>
-    </p>
+        <%= link_to "Code with me", friendship_path(friendship) %><br/>
+        <%= link_to "Remove Friend", friendship, data: { confirm: "Are you sure?" }, method: :delete %>
+      </p>
+    <% end %>
   </div>
 
 </div>
