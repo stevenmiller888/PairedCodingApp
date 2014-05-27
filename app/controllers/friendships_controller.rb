@@ -4,6 +4,7 @@ class FriendshipsController < ApplicationController
     #have a duplicate check
     @friendship = current_user.friendships.build(friend_id: params[:friend_id])
     if @friendship.save
+      @document = Document.create(text: "", friendship_id: @friendship.id)
       flash[:notice] = "Added friend."
       redirect_to root_url
     else
@@ -21,6 +22,7 @@ class FriendshipsController < ApplicationController
 
   def show
     #Editing session
+    @document = Document.find(params[:id])
   end
 
 end
