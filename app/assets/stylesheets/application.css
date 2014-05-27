@@ -22,6 +22,10 @@ body {
   font-family: 'Arvo', serif;
 }
 
+.row {
+  text-align: center;
+}
+
  /* Text editor CSS  */
 .e1 {
   width: 100%;
@@ -74,9 +78,5 @@ h3 {
   color: white;
   opacity: .8;
   height: 30px;
-}
-
-input {
-  text-align: center;
 }
 
