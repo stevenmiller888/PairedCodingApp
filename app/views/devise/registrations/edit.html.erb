@@ -18,6 +18,8 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
+  <div class='form'><%= f.text_field :profile_name, placeholder: 'Screen Name' %></div><br />
+
   <div class='form'>
     <%= f.password_field :password, autocomplete: "off", placeholder: 'New Password' %><br />
   </div><br/>
