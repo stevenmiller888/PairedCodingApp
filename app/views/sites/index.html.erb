@@ -1,12 +1,17 @@
-<!-- landing page, app name unknown -->
+<!-- Landing page, app name unknown -->
 
 <h1>Paired Coding</h1>
 
 <h2>Pair Program anytime, anywhere</h2>
 
-<textarea class="e1" rows="20"></textarea>
-<textarea class="e2" rows="20"></textarea>
-<script>
-  $('.e1').ace({ theme: 'twilight', lang: 'ruby' })
-  $('.e2').ace({ theme: 'twilight', lang: 'ruby' })
-</script>
+<% for user in @users %>
+<div class='User'>
+  <p>
+    <% unless user == current_user %>
+      <strong><%= user.email %></strong>
+      <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+      <div class="clear"></div>
+    <% end %>
+  </p>
+</div>
+<% end %>
