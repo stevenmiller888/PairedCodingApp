@@ -15,15 +15,24 @@
  *= require_self
  */
 
+
+body {
+  background-image: url('http://i.imgur.com/j7KB8ov.png');
+  color: white;
+  font-family: 'Arvo', serif;
+}
+
  /* Text editor CSS  */
 .e1 {
   width: 50%;
 }
-
 .e2 {
   width: 50%;
 }
 
+.form {
+  color: black;
+}
 h1 {
   color: #EEE5DE;
 }
@@ -36,22 +45,16 @@ h3 {
   color: #BCD2EE;
 }
 
-body {
-  background-image: url('http://i.imgur.com/j7KB8ov.png');
-  color: white;
-  font-family: 'Arvo', serif;
-}
-
 #edit-user {
   position: relative;
   left: 1000px;
 }
 
+/* Header navbar CSS */
 #navbar .navbar-right > li > a {
   color: #63B8FF;
   font-size: 15px;
 }
-
 .navbar-brand {
   font-size: 26px;
   font-weight: bold;
@@ -59,15 +62,17 @@ body {
   font-style: oblique;
   color: #458B74;
 }
-
 .icon-bar {
-  background-color: #E0FFFF;
+  background-color: #63B8FF;
 }
-
-.form {
-  color: black;
-}
-
 .navbar-right > li > a:hover {
   color: #458B74;
+}
+
+/* Footer navbar CSS */
+.navbar-fixed-bottom {
+  background-color: black;
+  color: white;
+  opacity: .8;
+  height: 30px;
 }
