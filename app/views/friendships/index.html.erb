@@ -1,0 +1,33 @@
+
+<% for user in @users %>
+<div class='User'>
+  <p>
+    <!-- ADD LOGIC TO REMOVE FRIENDS WHO WERE ALREADY ADDED --> 
+    <% unless user == current_user %>
+      <strong><%= user.email %></strong>
+      <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+      <div class="clear"></div>
+    <% end %>
+  </p>
+</div>
+<% end %>
+
+<h2>Your friends</h2>
+<ul>
+  <% for friendship in current_user.friendships %>
+  <li> 
+    <%= friendship.friend.email %><br /> 
+    <%= link_to "Code with me", friendship_path(friendship) %><br />
+    <%= link_to "Remove", friendship, data: { confirm: "Are you sure?" }, :method => :delete %>
+  </li>
+  <% end %>
+</ul>
+<ul>
+  <% for user in current_user.inverse_friends %>
+  <li> 
+    <%= user.email %> --Added You<br />
+    <%= link_to "Code with me", friendship_path(user) %><br />
+    <%= link_to "Remove", friendship, data: { confirm: "Are you sure?" }, :method => :delete %>
+  </li>
+  <% end %>
+</ul>
