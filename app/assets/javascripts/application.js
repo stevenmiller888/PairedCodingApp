@@ -19,3 +19,16 @@
 //= require bootstrap.min
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+
+  var editor1 = $('.e1').data('ace').editor.ace;
+  var editor2 = $('.e2').data('ace').editor.ace;
+
+  editor1.getSession().on('change', function(e) {
+    value = editor1.getValue();
+    editor2.setValue(value, 1);
+  });
+
+
+});
