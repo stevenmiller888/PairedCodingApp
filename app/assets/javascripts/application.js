@@ -22,12 +22,13 @@
 
 $(document).ready(function() {
 
-  var decorator = $('.e1').data('ace');
-  var decorator = $('.e2').data('ace');
-  var aceInstance = decorator.ace;
+  var editor1 = $('.e1').data('ace').editor.ace;
+  var editor2 = $('.e2').data('ace').editor.ace;
 
-  // This is the code that's in the editor at any given time
-  // decorator.element[0].value 
+  editor1.getSession().on('change', function(e) {
+    value = editor1.getValue();
+    editor2.setValue(value, 1);
+  });
 
 
 });
