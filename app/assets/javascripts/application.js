@@ -20,7 +20,7 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
+var ready = function() {
 
   // This editor has the current_user's document
   var editor1 = $('.e1').data('ace').editor.ace;
@@ -105,7 +105,6 @@ $(document).ready(function() {
       }
     });
   });
-
  
   $('#run2').on("click", function() {
     var text = editor2.getValue();
@@ -125,6 +124,8 @@ $(document).ready(function() {
       }
     });
   });
+};
 
-
-});
+//Fixes issue with turbolinks
+$(document).ready(ready);
+$(document).on('page:load', ready)
