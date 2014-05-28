@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   #Route for the contact us page
   get '/contact', to: 'sites#contact'
 
+  get '/users/:id', to: 'users#show'
+
 end
