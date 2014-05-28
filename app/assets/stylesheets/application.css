@@ -15,9 +15,7 @@
  *= require_self
  */
 
-html {
-  padding-bottom: 50px;
-}
+
 
 body {
   background-image: url('http://i.imgur.com/j7KB8ov.png');
@@ -97,7 +95,22 @@ h3 {
   color: #458B74;
 }
 /* Footer navbar CSS */
-.navbar-fixed-bottom {
+
+html, body {
+  position:inherit;
+  height: 100%;
+}
+
+.body {
+  margin-bottom: 1px;
+  min-height: calc(100% - 225px);
+  overflow: auto;
+}
+.footer {
+    margin: 1px;
+}
+ .footer {
+  margin-top: 100px;
   background-color: black;
 /*  opacity: .8;*/
 }
