@@ -27,10 +27,21 @@ $(document).ready(function() {
 
   editor1.getSession().on('change', function(e) {
     value = editor1.getValue();
+    // document = the document from an ajax get request, need the friendship_id somehow
     editor2.setValue(value, 1);
   });
 
   // the show.html.erb loads the document from the database using the friendship id
-  // now, need to regularly save the document to the database and get update the editors without refresh
+  // now, need to regularly save the document to the database and get update the editors without refresh using ajax
+
+
+
+
+
+
+
+
+
+
 
 });
