@@ -30,14 +30,7 @@ $(document).ready(function() {
     editor2.setValue(value, 1);
   });
 
-  // load the document from the database using the friendship id
-  // save the value to the database with the friendship id
-
-  // editor2.getSession().on('change', function(e) {
-  //   value = editor2.getValue();
-  //   editor1.setValue(value, 1);
-  // });
-
-  // One person coding at a time?
+  // the show.html.erb loads the document from the database using the friendship id
+  // now, need to regularly save the document to the database and get update the editors without refresh
 
 });
