@@ -19,6 +19,7 @@ class DocumentsController < ApplicationController
       format.json { render json: @document, status: :ok }
     end
   end
+<<<<<<< HEAD
 
   def run
     code = params[:text]
@@ -28,4 +29,6 @@ class DocumentsController < ApplicationController
     end
   end
 
+=======
+>>>>>>> updated controllers, models, views, and javascript to get editors working
 end
