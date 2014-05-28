@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PairedCodingApp</title>
+  <title>PairED</title>
   <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -34,7 +34,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to 'Friends', friendships_path %></li>
-          <li><%= link_to 'My Profile', edit_user_registration_path %></li>
+          <li><%= link_to 'Edit Account', edit_user_registration_path %></li>
           <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
         <% else %>
           
