@@ -15,9 +15,5 @@ class User < ActiveRecord::Base
   has_many :inverse_friends, :through => :inverse_friendships, :source => :user
 
   has_many :documents
-<<<<<<< HEAD
 
 end
-=======
-end
->>>>>>> updated controllers, models, views, and javascript to get editors working
