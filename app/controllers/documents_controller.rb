@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+
   before_action :authenticate_user!
 
   def index
@@ -18,4 +19,5 @@ class DocumentsController < ApplicationController
       format.json { render json: @document, status: :ok }
     end
   end
+  
 end
