@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :friendships
 
+  get '/documents', to: 'documents#index'
+  put '/documents', to: 'documents#update'
+
   get '/about', to: 'sites#about'
   get '/contact', to: 'sites#contact'
 

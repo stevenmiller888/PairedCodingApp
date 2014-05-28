@@ -1,9 +1,9 @@
 <div class="row" id="editors">
   <div class="col-md-6">
-    <textarea class="e1" rows="27"><%= @document.text %></textarea>
+    <textarea class="e1" id="<%=@current_user_id%>" rows="27"><%= @document1.text %></textarea>
   </div>
   <div class="col-md-6">
-    <textarea class="e2" rows="27"><%= @document.text %></textarea>
+    <textarea class="e2" id="<%=@friend_id%>" rows="27"><%= @document2.text %></textarea>
   </div>
 </div>
 <script>
