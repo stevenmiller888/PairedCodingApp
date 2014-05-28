@@ -34,6 +34,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   # Mute asset pipeline log
   gem 'quiet_assets'
+  # Use pry for debugging
   gem 'pry'
+  # Use pry-rails for debugging
   gem 'pry-rails'
 end

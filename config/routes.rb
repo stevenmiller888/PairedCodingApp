@@ -1,43 +1,22 @@
 Rails.application.routes.draw do
-  devise_for :users
 
+  #Index page is sites#index
   root 'sites#index'
 
+  #Routes for devise
+  devise_for :users
+
+  #Routes for friendships
   resources :friendships
 
+  #Route for the ajax get request to the other editor's document
   get '/documents', to: 'documents#index'
+  #Route for the ajax put request to update the current_user's editor's document's text
   put '/documents', to: 'documents#update'
 
+  #Route for the about us page 
   get '/about', to: 'sites#about'
+  #Route for the contact us page
   get '/contact', to: 'sites#contact'
 
 end
-
-
-# Prefix Verb   URI Pattern                     Controller#Action
-#         new_user_session GET    /users/sign_in(.:format)        devise/sessions#new
-#             user_session POST   /users/sign_in(.:format)        devise/sessions#create
-#     destroy_user_session DELETE /users/sign_out(.:format)       devise/sessions#destroy
-#            user_password POST   /users/password(.:format)       devise/passwords#create
-#        new_user_password GET    /users/password/new(.:format)   devise/passwords#new
-#       edit_user_password GET    /users/password/edit(.:format)  devise/passwords#edit
-#                          PATCH  /users/password(.:format)       devise/passwords#update
-#                          PUT    /users/password(.:format)       devise/passwords#update
-# cancel_user_registration GET    /users/cancel(.:format)         devise/registrations#cancel
-#        user_registration POST   /users(.:format)                devise/registrations#create
-#    new_user_registration GET    /users/sign_up(.:format)        devise/registrations#new
-#   edit_user_registration GET    /users/edit(.:format)           devise/registrations#edit
-#                          PATCH  /users(.:format)                devise/registrations#update
-#                          PUT    /users(.:format)                devise/registrations#update
-#                          DELETE /users(.:format)                devise/registrations#destroy
-#                     root GET    /                               sites#index
-#              friendships GET    /friendships(.:format)          friendships#index
-#                          POST   /friendships(.:format)          friendships#create
-#           new_friendship GET    /friendships/new(.:format)      friendships#new
-#          edit_friendship GET    /friendships/:id/edit(.:format) friendships#edit
-#               friendship GET    /friendships/:id(.:format)      friendships#show
-#                          PATCH  /friendships/:id(.:format)      friendships#update
-#                          PUT    /friendships/:id(.:format)      friendships#update
-#                          DELETE /friendships/:id(.:format)      friendships#destroy
-#                    about GET    /about(.:format)                sites#about
-#                  contact GET    /contact(.:format)              sites#contact
