@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   #Routes for devise
   devise_for :users
-  resources :users, only: :show
+  resources :users, only: [:show, :edit]
 
   #Routes for friendships
   resources :friendships

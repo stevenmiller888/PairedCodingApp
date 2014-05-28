@@ -5,10 +5,10 @@ gem 'rails', '4.1.1'
 gem 'pg'
 # Devise for authorization
 gem 'devise'
-#Gems for image upload
-  gem "paperclip"
-  gem 'aws-sdk'
-  gem 's3_direct_upload'
+# #Gems for image upload
+#   gem "paperclip"
+#   gem 'aws-sdk'
+#   gem 's3_direct_upload'
 # Use Ace for text editing
 gem 'jquery-ace-rails'
 # Enable Sass-based stylesheets
