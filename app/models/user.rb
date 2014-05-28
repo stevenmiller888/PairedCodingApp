@@ -5,9 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :profile_name, presence: true, uniqueness: true 
+  validates :full_name, presence: true, length: { minimum: 2 }
+  validates :profile_name, presence: true, uniqueness: true , length: { minimum: 3 }
 
   has_many :friendships
   has_many :friends, :through => :friendships
@@ -16,4 +15,5 @@ class User < ActiveRecord::Base
   has_many :inverse_friends, :through => :inverse_friendships, :source => :user
 
   has_many :documents
+
 end
