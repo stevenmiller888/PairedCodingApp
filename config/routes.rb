@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/about', to: 'sites#about'
   get '/contact', to: 'sites#contact'
 
+  get '/users/:id', to: 'users#show'
+
 end
 
 
