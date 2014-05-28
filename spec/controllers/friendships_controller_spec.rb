@@ -49,7 +49,7 @@ describe FriendshipsController do
     end
   end
 
-
+  
 
 
   # describe "Get #show" do
