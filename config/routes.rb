@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   #Routes for devise
   devise_for :users
+  resources :users, only: :show
 
   #Routes for friendships
   resources :friendships
@@ -26,7 +27,5 @@ Rails.application.routes.draw do
   get '/about', to: 'sites#about'
   #Route for the contact us page
   get '/contact', to: 'sites#contact'
-
-  get '/users/:id', to: 'users#show'
 
 end
