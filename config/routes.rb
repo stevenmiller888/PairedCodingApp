@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get '/documents', to: 'documents#index'
   #Route for the ajax put request to update the current_user's editor's document's text
   put '/documents', to: 'documents#update'
+  #Route for running the code
+  post '/documents', to: 'documents#run'
 
   #Route for the about us page 
   get '/about', to: 'sites#about'

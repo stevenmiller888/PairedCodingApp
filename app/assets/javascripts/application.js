@@ -82,4 +82,49 @@ $(document).ready(function() {
     });
   }, 5000); //time in milliseconds, 5 seconds
 
+  // Add a Ruby interpreter
+  // If the user presses the run button, then grab the text in the editor, and run .eval on it via the following:
+  // code = editor1.getValue()
+  // puts eval(code)
+
+  $('#run1').on("click", function() {
+    var text = editor1.getValue();
+    $.ajax({
+      type: "post",
+      url: "/documents",
+      data: {
+        "text": text
+      },
+      datatype: "json",
+      success: function(data) {
+        console.log(data);
+        $('.i1').val(data);
+      },
+      error: function(data) {
+        console.log(data.responseText);
+      }
+    });
+  });
+
+ 
+  $('#run2').on("click", function() {
+    var text = editor2.getValue();
+    $.ajax({
+      type: "post",
+      url: "/documents",
+      data: {
+        "text": text
+      },
+      datatype: "json",
+      success: function(data) {
+        console.log(data);
+        $('.i2').val(data);
+      },
+      error: function(data) {
+        console.log(data.responseText);
+      }
+    });
+  });
+
+
 });
