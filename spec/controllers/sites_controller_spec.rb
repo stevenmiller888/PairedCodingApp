@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe SitesController do
-  
+
   #method defined in controller_macros.rb to create a logged in user before running below tests
   login_user
 
