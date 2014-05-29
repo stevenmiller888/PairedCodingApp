@@ -27,7 +27,7 @@ var ready = function() {
   // This editor has the friend's document
   var editor2 = $('.e2').data('ace').editor.ace;
   // Set the editor with the friend's document to read-only
-  editor2.setReadOnly(true)
+  editor2.setReadOnly(true);
 
   // When the current_user's editor changes, grab the text in the editor, grab the param that has the friendship_id,
   // then do an ajax put request so that we can go and update the document in the database. 
@@ -53,7 +53,6 @@ var ready = function() {
       }
     });
   });
-
 
   // Set an interval for every x seconds to grab from the database the text in the friend's document, then 
   // set the value of the text in the friend's editor's document to the text field in the data we get back

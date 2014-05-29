@@ -1,30 +1,15 @@
 <div class="row" id="editors">
   <div class="col-md-6">
-
     <center><h3 style="color: white;">Your Code</h3></center>
     <textarea class="e1" id="<%=@current_user_id%>" rows="18"><%= @document1.text %></textarea>
     <textarea readonly class="i1" rows="4"></textarea>
     <center><button class="btn btn-success" id="run1">Run</button></center>
-
   </div>
   <div class="col-md-6">
     <center><h3 style="color: white;">Their Code</h3></center>
     <textarea class="e2" id="<%=@friend_id%>" rows="18"><%= @document2.text %></textarea>
     <textarea readonly class="i2" rows="4"></textarea>
     <center><button class="btn btn-success" id="run2">Run</button></center>
-
-    <textarea class="e1" id="<%=@current_user_id%>" rows="27"><%= @document1.text %></textarea>
-  </div>
-  <div class="col-md-6">
-    <textarea class="e2" id="<%=@friend_id%>" rows="27"><%= @document2.text %></textarea>
-
-  </div>
-  <div class="col-md-6">
-    <center><h3 style="color: white;">Their Code</h3></center>
-    <textarea class="e2" id="<%=@friend_id%>" rows="18"><%= @document2.text %></textarea>
-    <textarea readonly class="i2" rows="4"></textarea>
-    <center><button class="btn btn-success" id="run2">Run</button></center>
-
   </div>
 </div>
 <script>
