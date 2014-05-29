@@ -20,6 +20,8 @@
 //= require turbolinks
 //= require_tree .
 
+//js loading is broken again
+
 var ready = function() {
 
   // This editor has the current_user's document
@@ -46,10 +48,10 @@ var ready = function() {
       },
       dataType: "json",
       success: function(data) {
-        console.log(data);
+        // console.log(data);
       },
       error: function(data) {
-        console.log(data.responseText);
+        // console.log(data.responseText);
       }
     });
   });
@@ -71,13 +73,11 @@ var ready = function() {
       },
       datatype: "json",
       success: function(data) {
-        console.log(data);
-        if (data.text != text) {
-          editor2.setValue(data.text); //might need a , 1 after data.text
-        };
+        // console.log(data);
+        editor2.setValue(data.text);
       },
       error: function(data) {
-        console.log(data.responseText);
+        // console.log(data.responseText);
       }
     });
   }, 5000); //time in milliseconds, 5 seconds
@@ -99,10 +99,12 @@ var ready = function() {
       datatype: "json",
       success: function(data) {
         console.log(data);
-        $('.i1').val(data);
+        $('.i1').val(data.code);
       },
       error: function(data) {
-        console.log(data.responseText);
+        //console.log(data.responseText);
+       // console.log(data);
+        //$('.i1').val(data.responseText);
       }
     });
   });
@@ -118,11 +120,11 @@ var ready = function() {
       },
       datatype: "json",
       success: function(data) {
-        console.log(data);
+        // console.log(data);
         $('.i2').val(data);
       },
       error: function(data) {
-        console.log(data.responseText);
+        // console.log(data.responseText);
       }
     });
   });
