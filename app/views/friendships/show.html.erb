@@ -1,6 +1,6 @@
 <div class="row" id="editors">
   <div class="col-md-6">
-    <center><h3 style="color: white;"><%=@current_user.full_name.capitalize%>'s code</h3></center>
+    <center><h3 style="color: white;"><%=@current_user.profile_name.capitalize%>'s code</h3></center>
     <textarea class="e1" id="<%=@current_user_id%>" rows="18"><%= @document1.text %></textarea>
     <textarea readonly class="i1" rows="4"></textarea>
     <center><button class="btn btn-success" id="run1">Run</button></center>
