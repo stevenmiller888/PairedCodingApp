@@ -88,6 +88,7 @@ var ready = function() {
   // puts eval(code)
 
   $('#run1').on("click", function() {
+    $('.i1').val("");
     var text = editor1.getValue();
     $.ajax({
       type: "post",
@@ -107,6 +108,7 @@ var ready = function() {
   });
  
   $('#run2').on("click", function() {
+    $('.i2').val("");
     var text = editor2.getValue();
     $.ajax({
       type: "post",
