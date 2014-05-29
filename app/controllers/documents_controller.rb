@@ -19,10 +19,47 @@ class DocumentsController < ApplicationController
   end
 
   def run
-    code = params[:text]
-    result = eval(code)
-    respond_to do |format|
-      format.json { render json: result, status: :ok }
+    @code_sample = params[:text]
+    std_output = StringIO.new
+    std_error = StringIO.new
+
+    # sandbox = Shikashi::Sandbox.new
+    # allowed_methods = Shikashi::AllowedMethods.new
+    # allowed_methods.allow_all
+    # privileges = Shikashi::Privileges.allow_method([:show, :def, :end])
+    begin
+      $stdout = std_output
+      $stderr = std_error
+      @code_result = eval @code_sample
+     # @code_result = sandbox.run(privileges, @code_sample)
+      # binding.pry
+    rescue SyntaxError => se
+      @syntax_error = se
+    rescue NameError => ne
+      @syntax_error = ne
+    rescue TypeError => te
+      @syntax_error = te
+    rescue ArgumentError => ae
+      @syntax_error = ae
+    ensure
+      $stdout = STDOUT
+      $stderr = STDERR
+    end
+
+    @std_error = std_error.string
+    @std_output = std_output.string
+
+    @code_result = {code: @code_result}
+    @syntax_error = {code: @syntax_error.to_s}
+
+    if @syntax_error.nil?
+      respond_to do |format|
+        format.json { render json: @code_result, status: :ok }
+      end
+    else
+      respond_to do |format|
+        format.json { render json: @syntax_error, status: :ok }
+      end
     end
   end
 
