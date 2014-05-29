@@ -1,16 +1,19 @@
 <h1>My Profile</h1><br/>
 
+<div class="profile"
 <p>
-  Display Name:  <strong><%= @user.profile_name %></strong><br/><br/>
+  Display Name:  <strong><%= @user.profile_name.capitalize %></strong><br/><br/>
   Email:  <strong><%= @user.email %></strong><br/><br/>
   Ruby Level:  <strong><%= @user.level %></strong>
 </p>
 
 <h3>Add or Update Your Image</h3>
 
-<div class="field">
+
 <%= form_for @user do |f| %>
   <%= f.file_field :avatar %><br/>
   <%= f.submit 'Upload Image', class: 'btn btn-primary' %>
 <% end %>
+
+
 </div>
