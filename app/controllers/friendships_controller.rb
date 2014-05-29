@@ -1,4 +1,5 @@
 class FriendshipsController < ApplicationController
+  
   before_action :authenticate_user!
 
   def index
@@ -19,7 +20,7 @@ class FriendshipsController < ApplicationController
       flash[:notice] = "Added friend."
       redirect_to friendships_path
     else
-        flash[:notice] = "Unable to add friend."
+      flash[:notice] = "Unable to add friend."
     end
   end
 

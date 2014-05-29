@@ -106,7 +106,7 @@ var ready = function() {
       }
     });
   });
- 
+
   $('#run2').on("click", function() {
     $('.i2').val("");
     var text = editor2.getValue();
