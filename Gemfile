@@ -7,6 +7,7 @@ gem 'pg'
 gem 'devise'
 # #Gems for image upload
 gem 'carrierwave'
+gem "fog", "~> 1.3.1"
 #   gem 'aws-sdk'
 #   gem 's3_direct_upload'
 # Use Ace for text editing
