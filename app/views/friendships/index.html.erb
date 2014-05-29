@@ -13,6 +13,7 @@
       <p>
         <% unless current_user_friends.include? user %>
           <% unless user == current_user %>
+            <div class='friendships-img'><%= image_tag user.avatar %></div>
             <%= user.profile_name.capitalize %><br/>
             Level: <%= user.level %><br/>
             <%= link_to "Add Friend", friendships_path(friend_id: user), method: :post %>

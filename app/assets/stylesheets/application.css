@@ -20,8 +20,33 @@ body {
   color: white;
   font-family: 'Arvo', serif;
 }
-
 .row {
+  text-align: center;
+}
+
+/*Friendships Index CSS */
+.friendships-img > img {
+  width: 100px;
+  border-radius: 100px;
+}
+
+/* Landing Page CSS  */
+
+ .landing > img {
+  width: 80%;
+ }
+
+/* Profile Page CSS  */
+
+.profile-img > img {
+  width: 150px;
+  border-radius: 100px;
+ }
+.profile > p {
+  color: #BCD2EE;
+  font-size: 16px;
+}
+.field {
   text-align: center;
 }
 
