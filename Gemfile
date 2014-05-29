@@ -5,6 +5,10 @@ gem 'rails', '4.1.1'
 gem 'pg'
 # Devise for authorization
 gem 'devise'
+# #Gems for image upload
+#   gem "paperclip"
+#   gem 'aws-sdk'
+#   gem 's3_direct_upload'
 # Use Ace for text editing
 gem 'jquery-ace-rails'
 # Enable Sass-based stylesheets
@@ -38,4 +42,5 @@ group :development, :test do
   gem 'pry'
   # Use pry-rails for debugging
   gem 'pry-rails'
+
 end
