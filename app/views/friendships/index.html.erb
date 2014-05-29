@@ -13,7 +13,7 @@
       <p>
         <% unless current_user_friends.include? user %>
           <% unless user == current_user %>
-            <%= user.email %><br/>
+            <%= user.profile_name.capitalize %><br/>
             Level: <%= user.level %><br/>
             <%= link_to "Add Friend", friendships_path(friend_id: user), method: :post %>
           <% end %>
@@ -26,7 +26,7 @@
     <h2>Your Friends</h2>
     <% current_user.inverse_friendships.each do |friendship| %>
     <p>
-      <%= friendship.user.email %>
+      <%= friendship.user.profile_name.capitalize  %>
       Level: <%= friendship.user.level %><br/>
       <%= link_to "Code with me", friendship_path(friendship) %><br/>
       <%= link_to "Remove Friend", friendship, data: { confirm: "Are you sure?" }, method: :delete %>
@@ -34,7 +34,7 @@
     <% end %>
     <% current_user.friendships.each do |friendship| %>
     <p>
-      <%= friendship.friend.email %><br/>
+      <%= friendship.friend.profile_name.capitalize  %><br/>
       Level: <%= friendship.friend.level %><br/>
       <%= link_to "Code with me", friendship_path(friendship) %><br/>
       <%= link_to "Remove Friend", friendship, data: { confirm: "Are you sure?" }, method: :delete %>
