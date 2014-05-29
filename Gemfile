@@ -6,7 +6,7 @@ gem 'pg'
 # Devise for authorization
 gem 'devise'
 # #Gems for image upload
-#   gem "paperclip"
+gem 'carrierwave'
 #   gem 'aws-sdk'
 #   gem 's3_direct_upload'
 # Use Ace for text editing
