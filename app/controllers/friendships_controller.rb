@@ -39,10 +39,12 @@ class FriendshipsController < ApplicationController
         #document1 is the current_user's document
         @document1 = document
         @current_user_id = current_user.id
+        @current_user = current_user
       else
         #document2 is the friend's document
         @document2 = document
         @friend_id = @document2.user_id
+        @friend = User.find(@friend_id)
       end
     end
   end
