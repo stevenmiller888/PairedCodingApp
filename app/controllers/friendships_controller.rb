@@ -20,7 +20,6 @@ class FriendshipsController < ApplicationController
       redirect_to friendships_path
     else
         flash[:notice] = "Unable to add friend."
-        redirect_to friendships_path
     end
   end
 
