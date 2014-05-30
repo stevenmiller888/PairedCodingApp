@@ -79,7 +79,7 @@ var ready = function() {
         console.log(data.responseText);
       }
     });
-  }, 3000); //time in milliseconds, 5 seconds
+  }, 1000); //time in milliseconds, 1 second
 
   // Add a Ruby interpreter
   // If the user presses the run button, then grab the text in the editor, and run .eval on it via the following:
