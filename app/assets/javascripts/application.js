@@ -13,6 +13,7 @@
 //= require jquery/jquery-1.8.3.min
 //= require ace/ace
 //= require ace/theme-twilight
+//= require ace/theme-chrome
 //= require ace/mode-ruby
 //= require jquery-ace.min
 //= require jquery_ujs
