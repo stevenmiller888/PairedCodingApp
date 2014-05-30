@@ -24,6 +24,7 @@ class DocumentsController < ApplicationController
     begin
       $stdout = std_output
       $stderr = std_error
+      # if @code_sample.include? "Document." || "User."
       @code_result = eval @code_sample
     rescue SyntaxError => se
       @syntax_error = se
