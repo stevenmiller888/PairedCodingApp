@@ -34,7 +34,7 @@ class FriendshipsController < ApplicationController
       flash[:notice] = "Removed friendship."
       redirect_to friendships_path
     else
-        @friendship.destroy
+      @friendship.destroy
       flash[:notice] = "Removed friendship."
       redirect_to friendships_path
     end
