@@ -1,11 +1,11 @@
-<h1>My Profile</h1><br/>
-
 <div class="profile">
-  <div class='profile-img'><%= image_tag @user.avatar_url.to_s %></div><br/>
-  <p>
-    Username:<br/><strong><%= @user.profile_name.capitalize %></strong><br/><br/>
-    Email:<br/><strong><%= @user.email %></strong><br/><br/>
-    Ruby Level:<br/><strong><%= @user.level %></strong><br/><br/>
-  </p>
-  <%= link_to 'Edit Account', edit_user_registration_path, class: 'btn btn-primary' %>
+
+  <h1>My Profile</h1><br/>
+    <div class='profile-img'><%= image_tag @user.avatar_url.to_s %></div><br/>
+    <p>
+      Username:<br/><strong><%= @user.profile_name.capitalize %></strong><br/><br/>
+      Email:<br/><strong><%= @user.email %></strong><br/><br/>
+      Ruby Level:<br/><strong><%= @user.level %></strong><br/><br/>
+    </p>
+    <%= link_to 'Edit Account', edit_user_registration_path, class: 'btn btn-primary' %>
 </div>
