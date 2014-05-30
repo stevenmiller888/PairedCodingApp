@@ -26,7 +26,6 @@ class FriendshipsController < ApplicationController
     end
   end
 
-  # Need to add code for destroying the documents too
   def destroy
     @friendship = current_user.friendships.where(id: params[:id])
     if @friendship.empty?
