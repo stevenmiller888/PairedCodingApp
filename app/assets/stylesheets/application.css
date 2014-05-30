@@ -20,44 +20,84 @@ body {
   color: white;
   font-family: 'Arvo', serif;
 }
+
 .row {
   text-align: center;
 }
 
-/*Friendships Index CSS */
+/* Friendships Index CSS */
+
 .friendships-img > img {
   width: 100px;
   border-radius: 100px;
 }
 
+.friends > .col-md-6 > h2 {
+  color: #BCD2EE;
+}
+
 /* Landing Page CSS  */
 
+.landing > h1 {
+  color: #EEE5DE;
+}
+
+.landing > h2 {
+  color: #BCD2EE;
+}
+
+.landing > h3 {
+  color: #BCD2EE;
+}
+
  .landing > img {
-  width: 80%;
+  width: 75%;
  }
 
 /* Profile Page CSS  */
+
+.profile {
+  text-align: center;
+}
+
+.profile > h1 {
+  color: #EEE5DE;
+}
 
 .profile-img > img {
   width: 150px;
   border-radius: 100px;
  }
+
 .profile > p {
   color: #BCD2EE;
   font-size: 16px;
 }
-.field {
-  text-align: center;
-  margin: auto 0;
-  display: inline;
-}
+
+/* Forms CSS */
+
 input[type=file]{
   display: inline;
   margin-left: 130px;
-
 }
 
- /* Text editor CSS  */
+.form {
+  color: black;
+}
+
+.sign-up > h3 {
+  color: #BCD2EE;
+}
+
+.edit-user > h3 {
+  color: #BCD2EE;
+}
+
+.edit-user > h2 {
+  color: #BCD2EE;
+}
+
+/* Text editor CSS */
 
 #editors {
   text-align: left;
@@ -71,6 +111,11 @@ input[type=file]{
 .col-md-6 {
   position: relative;
   bottom: 20px;
+}
+
+.col-md-6 > h3 {
+  color: white;
+  text-align: center;
 }
 
 .i1 {
@@ -87,31 +132,18 @@ input[type=file]{
   color: black;
 }
 
-.form {
-  color: black;
-}
-h1 {
-  color: #EEE5DE;
-}
-
-h2 {
-  color: #BCD2EE;
-}
-
-h3 {
-  color: #BCD2EE;
-}
-
-#edit-user {
+/*#edit-user {
   position: relative;
   left: 1000px;
-}
+}*/
 
 /* Header navbar CSS */
+
 #navbar .navbar-right > li > a {
   color: #63B8FF;
   font-size: 15px;
 }
+
 .navbar-brand {
   font-size: 26px;
   font-weight: bold;
@@ -119,29 +151,31 @@ h3 {
   font-style: oblique;
   color: #458B74;
 }
+
 .icon-bar {
   background-color: #63B8FF;
 }
+
 .navbar-right > li > a:hover {
   color: #458B74;
 }
+
 /* Footer navbar CSS */
 
 html, body {
   position:inherit;
   height: 100%;
 }
+
 .body {
   margin-bottom: 1px;
   min-height: calc(100% - 225px);
   overflow: auto;
 }
+
  .footer {
   margin: 1px;
   margin-top: 100px;
   background-color: black;
   opacity: .7;
 }
-.footer_links {
-/*  letter-spacing: 2px;
-*/}
