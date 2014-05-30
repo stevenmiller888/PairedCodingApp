@@ -27,7 +27,7 @@
       <h2>Your Friends</h2>
       <% current_user.inverse_friendships.each do |friendship| %>
       <p>
-        <div class='friendships-img'><%= image_tag friendship.inverse_friend.avatar %></div>
+        <div class='friendships-img'><%= image_tag friendship.user.avatar %></div>
         <%= friendship.user.profile_name %>
         Level: <%= friendship.user.level %><br/>
         <%= link_to "Code with me", friendship_path(friendship) %><br/>
