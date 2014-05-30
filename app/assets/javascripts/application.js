@@ -12,6 +12,7 @@
 //
 //= require jquery/jquery-1.8.3.min
 //= require ace/ace
+//= require ace/theme-chrome
 //= require ace/theme-twilight
 //= require ace/mode-ruby
 //= require jquery-ace.min
@@ -96,8 +97,8 @@ var ready = function() {
       },
       datatype: "json",
       success: function(data) {
-        console.log(data);
-        $('.i1').val(data.code);
+        console.log(data.code);
+        $('.i1').val(data["code"]);
       },
       error: function(data) {
         console.log(data.responseText);
