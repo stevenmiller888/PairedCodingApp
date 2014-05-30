@@ -52,7 +52,7 @@ body {
 
  .landing > img {
   width: 75%;
- }
+}
 
 /* Profile Page CSS  */
 
@@ -131,11 +131,6 @@ input[type=file]{
   background-color: #ffffff;
   color: black;
 }
-
-/*#edit-user {
-  position: relative;
-  left: 1000px;
-}*/
 
 /* Header navbar CSS */
 
