@@ -27,7 +27,6 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    binding.pry
     @friendship = current_user.friendships.where(id: params[:id])
     if @friendship.empty?
       @friendship = current_user.inverse_friendships.find(params[:id])
