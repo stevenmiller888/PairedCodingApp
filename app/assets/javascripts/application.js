@@ -20,8 +20,6 @@
 //= require turbolinks
 //= require_tree .
 
-//js loading is broken again
-
 var ready = function() {
 
   // This editor has the current_user's document
@@ -48,10 +46,10 @@ var ready = function() {
       },
       dataType: "json",
       success: function(data) {
-        // console.log(data);
+        console.log(data);
       },
       error: function(data) {
-        // console.log(data.responseText);
+        console.log(data.responseText);
       }
     });
   });
@@ -73,14 +71,14 @@ var ready = function() {
       },
       datatype: "json",
       success: function(data) {
-        // console.log(data);
+        console.log(data);
         editor2.setValue(data.text);
       },
       error: function(data) {
-        // console.log(data.responseText);
+        console.log(data.responseText);
       }
     });
-  }, 5000); //time in milliseconds, 5 seconds
+  }, 3000); //time in milliseconds, 5 seconds
 
   // Add a Ruby interpreter
   // If the user presses the run button, then grab the text in the editor, and run .eval on it via the following:
@@ -102,9 +100,7 @@ var ready = function() {
         $('.i1').val(data.code);
       },
       error: function(data) {
-        //console.log(data.responseText);
-       // console.log(data);
-        //$('.i1').val(data.responseText);
+        console.log(data.responseText);
       }
     });
   });
@@ -120,11 +116,11 @@ var ready = function() {
       },
       datatype: "json",
       success: function(data) {
-        // console.log(data);
-        $('.i2').val(data);
+        console.log(data);
+        $('.i2').val(data.code);
       },
       error: function(data) {
-        // console.log(data.responseText);
+        console.log(data.responseText);
       }
     });
   });

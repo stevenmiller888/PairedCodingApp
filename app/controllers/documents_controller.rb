@@ -1,7 +1,5 @@
 class DocumentsController < ApplicationController
 
-  before_action :authenticate_user!
-
   def index
     @document = Document.where(friendship_id: params["document"]["friendship_id"], user_id: params["document"]["user_id"])[0]
     respond_to do |format|
@@ -23,16 +21,10 @@ class DocumentsController < ApplicationController
     std_output = StringIO.new
     std_error = StringIO.new
 
-    # sandbox = Shikashi::Sandbox.new
-    # allowed_methods = Shikashi::AllowedMethods.new
-    # allowed_methods.allow_all
-    # privileges = Shikashi::Privileges.allow_method([:show, :def, :end])
     begin
       $stdout = std_output
       $stderr = std_error
       @code_result = eval @code_sample
-     # @code_result = sandbox.run(privileges, @code_sample)
-      # binding.pry
     rescue SyntaxError => se
       @syntax_error = se
     rescue NameError => ne

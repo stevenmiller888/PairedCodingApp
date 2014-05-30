@@ -1,7 +1,9 @@
 class FriendshipsController < ApplicationController
-  
-  before_action :authenticate_user!
+  include FriendshipsHelper
 
+  before_action :authenticate_user!
+  before_action :check_friendship_owner, only: [:show]
+  
   def index
     @users = User.all
     @friendships = Friendship.all

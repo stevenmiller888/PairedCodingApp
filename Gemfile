@@ -12,8 +12,6 @@ gem "fog", "~> 1.3.1"
 #   gem 's3_direct_upload'
 # Use Ace for text editing
 gem 'jquery-ace-rails'
-# Shikashi for sandbox
-gem 'shikashi'
 # Enable Sass-based stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
