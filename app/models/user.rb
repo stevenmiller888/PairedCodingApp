@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   validates :full_name, presence: true, length: { minimum: 2 }
-  validates :profile_name, presence: true, uniqueness: true , length: { minimum: 3 }
+  validates :profile_name, presence: true, uniqueness: true, length: { minimum: 3 }
 
   has_many :friendships
   has_many :friends, :through => :friendships
