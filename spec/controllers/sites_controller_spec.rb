@@ -6,15 +6,10 @@ describe SitesController do
   login_user
 
   describe 'GET index' do
-    it 'returns a 200 OK status' do
+    it 'returns a 302 redirect status for logged in user' do
       get :index
-      expect(response.status).to eq(200)
+      expect(response.status).to eq(302)
     end
-  end
-
-  it 'renders the index template' do
-    get :index
-    expect(response).to render_template('index')
   end
 
   describe 'GET about' do
