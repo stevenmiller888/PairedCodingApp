@@ -57,9 +57,6 @@ GEM
     dotenv-rails (0.11.1)
       dotenv (= 0.11.1)
     erubis (2.7.0)
-    evalhook (0.6.0)
-      partialruby (~> 0.3)
-      sexp_processor (~> 4.0)
     excon (0.13.4)
     execjs (2.0.2)
     factory_girl (4.4.0)
@@ -155,6 +152,7 @@ GEM
       rspec-mocks (~> 2.14.0)
     ruby-graphviz (1.0.9)
     ruby-hmac (0.4.0)
+    sandboxed (0.0.2)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -212,6 +210,7 @@ DEPENDENCIES
   rails-erd
   rails_12factor
   rspec-rails
+  sandboxed
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
