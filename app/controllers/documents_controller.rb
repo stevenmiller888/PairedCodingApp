@@ -43,14 +43,21 @@ class DocumentsController < ApplicationController
 
     @code_result = {"code" => @code_result}
     @syntax_error = {"code" => @syntax_error.to_s}
-
-    if @syntax_error["code"] == ""
+    @std_output = {"code" => @std_output}
+   
+    if @std_output["code"] != ""
       respond_to do |format|
-        format.json { render json: @code_result, status: :ok }
+        format.json { render json: @std_output, status: :ok }
       end
     else
-      respond_to do |format|
-        format.json { render json: @syntax_error, status: :ok }
+      if @syntax_error["code"] == ""
+        respond_to do |format|
+          format.json { render json: @code_result, status: :ok }
+        end
+      else
+        respond_to do |format|
+          format.json { render json: @syntax_error, status: :ok }
+        end
       end
     end
   end
