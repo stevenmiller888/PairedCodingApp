@@ -31,11 +31,15 @@ class FriendshipsController < ApplicationController
     if @friendship.empty?
       @friendship = current_user.inverse_friendships.find(params[:id])
       @friendship.destroy
+      @document = Document.find_by_friendship_id(@friendship.id)
+      @document.destroy
       flash[:notice] = "Removed friendship."
       redirect_to friendships_path
     else
       @friendship = current_user.friendships.find(params[:id])
       @friendship.destroy
+      @document = Document.find_by_friendship_id(@friendship.id)
+      @document.destroy
       flash[:notice] = "Removed friendship."
       redirect_to friendships_path
     end
