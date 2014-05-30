@@ -97,8 +97,8 @@ var ready = function() {
       },
       datatype: "json",
       success: function(data) {
-        console.log(data);
-        $('.i1').val(data.code);
+        console.log(data.code);
+        $('.i1').val(data["code"]);
       },
       error: function(data) {
         console.log(data.responseText);
