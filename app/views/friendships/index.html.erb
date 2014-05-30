@@ -14,7 +14,7 @@
         <% unless current_user_friends.include? user %>
           <% unless user == current_user %>
             <div class='friendships-img'><%= image_tag user.avatar %></div>
-            <%= user.profile_name.capitalize %><br/>
+            <%= user.profile_name %><br/>
             Level: <%= user.level %><br/>
             <%= link_to "Add Friend", friendships_path(friend_id: user), method: :post %>
           <% end %>
@@ -27,7 +27,7 @@
     <h2>Your Friends</h2>
     <% current_user.inverse_friendships.each do |friendship| %>
     <p>
-      <%= friendship.user.profile_name.capitalize  %>
+      <%= friendship.user.profile_name %>
       Level: <%= friendship.user.level %><br/>
       <%= link_to "Code with me", friendship_path(friendship) %><br/>
       <%= link_to "Remove Friend", friendship, data: { confirm: "Are you sure?" }, method: :delete %>
@@ -35,7 +35,8 @@
     <% end %>
     <% current_user.friendships.each do |friendship| %>
     <p>
-      <%= friendship.friend.profile_name.capitalize  %><br/>
+      <div class='friendships-img'><%= image_tag friendship.friend.avatar %></div>
+      <%= friendship.friend.profile_name  %><br/>
       Level: <%= friendship.friend.level %><br/>
       <%= link_to "Code with me", friendship_path(friendship) %><br/>
       <%= link_to "Remove Friend", friendship, data: { confirm: "Are you sure?" }, method: :delete %>
