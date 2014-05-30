@@ -26,16 +26,21 @@ class FriendshipsController < ApplicationController
     end
   end
 
+  # Need to add code for destroying the documents too
   def destroy
     @friendship = current_user.friendships.where(id: params[:id])
     if @friendship.empty?
       @friendship = current_user.inverse_friendships.find(params[:id])
       @friendship.destroy
+      @document = Document.find_by_friendship_id(@friendship.id)
+      @document.destroy
       flash[:notice] = "Removed friendship."
       redirect_to friendships_path
     else
       @friendship = current_user.friendships.find(params[:id])
       @friendship.destroy
+      @document = Document.find_by_friendship_id(@friendship.id)
+      @document.destroy
       flash[:notice] = "Removed friendship."
       redirect_to friendships_path
     end
