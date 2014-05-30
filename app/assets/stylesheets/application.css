@@ -48,6 +48,13 @@ body {
 }
 .field {
   text-align: center;
+  margin: auto 0;
+  display: inline;
+}
+input[type=file]{
+  display: inline;
+  margin-left: 130px;
+
 }
 
  /* Text editor CSS  */
@@ -135,3 +142,6 @@ html, body {
   background-color: black;
   opacity: .7;
 }
+.footer_links {
+/*  letter-spacing: 2px;
+*/}
