@@ -1,4 +1,7 @@
 CarrierWave.configure do |config|
+  ## Good job here, AWS keys are
+  ## especially secret data.  Never
+  ## check them into github.
   config.fog_credentials = {
     provider: "AWS",
     aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],

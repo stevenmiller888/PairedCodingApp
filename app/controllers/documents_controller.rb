@@ -7,6 +7,9 @@ class DocumentsController < ApplicationController
     end
   end
 
+  # It would be nice to have some sort of error handling for the case where
+  # a user try to modify a document that they do not own.  This code will
+  # not allow the modification to happen, but it will fail hard.
   def update
     @document = Document.where(friendship_id: params["document"]["friendship_id"], user_id: current_user.id)[0]
     updated_attributes = params.require(:document).permit(:text, :friendship_id, :user_id)

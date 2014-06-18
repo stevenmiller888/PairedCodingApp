@@ -47,6 +47,8 @@ var ready = function() {
       },
       dataType: "json",
       success: function(data) {
+        // You probably don't want to console log this unless you're doing
+        // development.  Might be worth taking out.
         console.log(data);
       },
       error: function(data) {
@@ -57,6 +59,9 @@ var ready = function() {
 
   // Set an interval for every x seconds to grab from the database the text in the friend's document, then 
   // set the value of the text in the friend's editor's document to the text field in the data we get back
+
+  // This is not the most efficient way to achieve this.  You don't want to keep getting
+  // from the server if a change hasn't been made.  Look into web sockets.
   setInterval(function() {
     var text = editor2.getValue();
     var myParam = window.location.pathname.split('/')[2]
@@ -128,5 +133,6 @@ var ready = function() {
 };
 
 //Fixes issue with turbolinks
+// Good job here.
 $(document).ready(ready);
 $(document).on('page:load', ready)

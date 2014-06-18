@@ -2,6 +2,11 @@
 <html>
 <head>
   <title>PairED</title>
+  <!-- 
+       Did you have an issue with fonts in production?  I don't think this
+       will work on heroku.  What should work is:
+       href='//fonts.googleapis.com/css?family=Arvo'
+  -->
   <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -16,6 +21,8 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 
+
+<!-- Good job here.  Well designed layout -->
 <%= render "layouts/navbar" %>
 
 <div class="container body">

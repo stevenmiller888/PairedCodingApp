@@ -20,6 +20,8 @@ describe DocumentsController do
   describe "Update #update" do
     it 'should update itself' do
       # expect(factory).to_be valid
+
+      ## Try not to leave binding.pry in the code.
       binding.pry
       put :update, document: {text: @document.text, friendship_id: 1} , format: :json
       # }.to change( @document.text )

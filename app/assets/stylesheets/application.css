@@ -15,6 +15,10 @@
  *= require_self
  */
 
+/* 
+  Using the http image may cause an issue in production when
+  on a https site.
+ */
 body {
   background-image: url('http://i.imgur.com/j7KB8ov.png');
   color: white;

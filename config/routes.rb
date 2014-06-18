@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit]
 
   #Routes for friendships
+  ## Try not to create unused routes.  Friendships does not
+  ## have a new action in your controller for example.
   resources :friendships
 
   #Route for the ajax get request to the other editor's document
