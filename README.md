@@ -6,6 +6,8 @@
 
 * There are 3 models: document, friendship, and user. 
 
+![](http://i.imgur.com/PEzlAvY.png)
+
 If you would like to run PairedCodingApp locally, just clone this repo:
 
 ```
