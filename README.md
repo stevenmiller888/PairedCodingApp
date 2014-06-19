@@ -2,7 +2,7 @@
 
 * PairedCodingApp is a Ruby on Rails app for programmers of different levels to virtually code together
 
-* It uses Devise for authentication, carrierwave for image upload, and sandboxed to safely evaluate Ruby code. It also uses the jquery-ace-rails gem to embed the Ace Code Editor into divs.
+* It uses Devise for authentication, Carrierwave for image upload, and Sandboxed to safely evaluate Ruby code. It also uses the jQuery-Ace-Rails gem to embed the Ace Code Editor into divs.
 
 * There are 3 models: document, friendship, and user. 
 
