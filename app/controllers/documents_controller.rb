@@ -1,3 +1,5 @@
+require 'timeout'
+
 class DocumentsController < ApplicationController
 
   def index
@@ -24,21 +26,23 @@ class DocumentsController < ApplicationController
     std_output = StringIO.new
     std_error = StringIO.new
 
-    begin
-      $stdout = std_output
-      $stderr = std_error
-      @code_result = safe(:level => 3) { eval @code_sample }
-    rescue SyntaxError => se
-      @syntax_error = se
-    rescue NameError => ne
-      @syntax_error = ne
-    rescue TypeError => te
-      @syntax_error = te
-    rescue ArgumentError => ae
-      @syntax_error = ae
-    ensure
-      $stdout = STDOUT
-      $stderr = STDERR
+    Timeout.timeout(5) do
+      begin
+        $stdout = std_output
+        $stderr = std_error
+        @code_result = safe(:level => 3) { eval @code_sample }
+      rescue SyntaxError => se
+        @syntax_error = se
+      rescue NameError => ne
+        @syntax_error = ne
+      rescue TypeError => te
+        @syntax_error = te
+      rescue ArgumentError => ae
+        @syntax_error = ae
+      ensure
+        $stdout = STDOUT
+        $stderr = STDERR
+      end
     end
 
     @std_error = std_error.string
