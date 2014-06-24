@@ -26,7 +26,7 @@ class DocumentsController < ApplicationController
     std_output = StringIO.new
     std_error = StringIO.new
 
-    Timeout.timeout(5) do
+    Timeout.timeout(20) do
       begin
         $stdout = std_output
         $stderr = std_error
