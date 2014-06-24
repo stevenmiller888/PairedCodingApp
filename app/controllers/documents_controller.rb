@@ -27,7 +27,7 @@ class DocumentsController < ApplicationController
     begin
       $stdout = std_output
       $stderr = std_error
-      @code_result = safe{ eval @code_sample }
+      @code_result = safe(:level => 3) { eval @code_sample }
     rescue SyntaxError => se
       @syntax_error = se
     rescue NameError => ne
