@@ -1,4 +1,0 @@
-== README
-#### It's good that you've gotten something started here.
-#### Maybe add some setup information to get the app running.
-PairedCoding -- An app for programmers of different levels to virtually code together
