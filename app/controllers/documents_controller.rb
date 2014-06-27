@@ -1,3 +1,4 @@
+# Timeout in for help in sandboxing the code evaluation
 require 'timeout'
 
 class DocumentsController < ApplicationController
@@ -9,9 +10,6 @@ class DocumentsController < ApplicationController
     end
   end
 
-  # It would be nice to have some sort of error handling for the case where
-  # a user try to modify a document that they do not own.  This code will
-  # not allow the modification to happen, but it will fail hard.
   def update
     @document = Document.where(friendship_id: params["document"]["friendship_id"], user_id: current_user.id)[0]
     updated_attributes = params.require(:document).permit(:text, :friendship_id, :user_id)
@@ -26,10 +24,13 @@ class DocumentsController < ApplicationController
     std_output = StringIO.new
     std_error = StringIO.new
 
+    # If the interpreter takes longer than 20 seconds, assume we are in an
+    # infinite loop and terminate.
     Timeout.timeout(20) do
       begin
         $stdout = std_output
         $stderr = std_error
+        # Safely evaluate the code within a sandbox at level 3 safety
         @code_result = safe(:level => 3) { eval @code_sample }
       rescue SyntaxError => se
         @syntax_error = se

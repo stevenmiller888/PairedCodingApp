@@ -1,4 +1,5 @@
 class FriendshipsController < ApplicationController
+  
   include FriendshipsHelper
 
   before_action :authenticate_user!
@@ -12,7 +13,7 @@ class FriendshipsController < ApplicationController
   def create
     @friendship = current_user.friendships.build(friend_id: params[:friend_id])
     if @friendship.save
-      # At creation, the owner is whoever the current user is, which means the user who initited the add
+      # At creation, the owner is whoever the current user is, which means the user who initiated the add
       @document1 = current_user.documents.build(text: "", friendship_id: @friendship.id)
       @document1.save
       # At creation, the owner is the user who was friended, i.e. the one with friend_id

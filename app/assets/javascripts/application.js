@@ -30,8 +30,9 @@ var ready = function() {
   // Set the editor with the friend's document to read-only
   editor2.setReadOnly(true);
 
-  // When the current_user's editor changes, grab the text in the editor, grab the param that has the friendship_id,
-  // then do an ajax put request so that we can go and update the document in the database. 
+  // When the current_user's editor changes, grab the text in the editor,
+  // grab the param that has the friendship_id, then do an ajax put request so
+  // that we can go and update the document in the database. 
   editor1.getSession().on('change', function(event) {
     var text = editor1.getValue();
     var myParam = window.location.pathname.split('/')[2]
@@ -47,9 +48,7 @@ var ready = function() {
       },
       dataType: "json",
       success: function(data) {
-        // You probably don't want to console log this unless you're doing
-        // development.  Might be worth taking out.
-        console.log(data);
+        // Do nothing in production
       },
       error: function(data) {
         console.log(data.responseText);
@@ -59,12 +58,9 @@ var ready = function() {
 
   // Set an interval for every x seconds to grab from the database the text in the friend's document, then 
   // set the value of the text in the friend's editor's document to the text field in the data we get back
-
-  // This is not the most efficient way to achieve this.  You don't want to keep getting
-  // from the server if a change hasn't been made.  Look into web sockets.
   setInterval(function() {
     var text = editor2.getValue();
-    var myParam = window.location.pathname.split('/')[2]
+    var myParam = window.location.pathname.split('/')[2];
     $.ajax({
       type: "get",
       url: "/documents",
@@ -77,20 +73,20 @@ var ready = function() {
       },
       datatype: "json",
       success: function(data) {
-        console.log(data);
         editor2.setValue(data.text);
       },
       error: function(data) {
         console.log(data.responseText);
       }
     });
-  }, 1000); //time in milliseconds, 1 second
+  }, 1000); //1 second
 
-  // Add a Ruby interpreter
-  // If the user presses the run button, then grab the text in the editor, and run .eval on it via the following:
-  // code = editor1.getValue()
-  // puts eval(code)
-
+  // Ruby interpreter: If the user presses the run button, then grab the text
+  // in the editor, and run .eval on it via the following:
+  /*
+      code = editor1.getValue()
+      puts eval(code)
+  */
   $('#run1').on("click", function() {
     $('.i1').val("");
     var text = editor1.getValue();
@@ -102,8 +98,7 @@ var ready = function() {
       },
       datatype: "json",
       success: function(data) {
-        console.log(data.code);
-        $('.i1').val(data["code"]);
+        $('.i1').val(data.code);
       },
       error: function(data) {
         console.log(data.responseText);
@@ -122,7 +117,6 @@ var ready = function() {
       },
       datatype: "json",
       success: function(data) {
-        console.log(data);
         $('.i2').val(data.code);
       },
       error: function(data) {
@@ -133,6 +127,5 @@ var ready = function() {
 };
 
 //Fixes issue with turbolinks
-// Good job here.
 $(document).ready(ready);
 $(document).on('page:load', ready)

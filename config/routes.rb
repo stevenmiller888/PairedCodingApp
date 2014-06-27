@@ -8,9 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit]
 
   #Routes for friendships
-  ## Try not to create unused routes.  Friendships does not
-  ## have a new action in your controller for example.
-  resources :friendships
+  resources :friendships, only: [:index, :create, :destroy, :show]
 
   #Route for the ajax get request to the other editor's document
   get '/documents', to: 'documents#index'
@@ -20,7 +18,6 @@ Rails.application.routes.draw do
   post '/documents', to: 'documents#run'
 
   #Route for the ajax get request to the other editor's document
-
   get '/documents', to: 'documents#index'
   #Route for the ajax put request to update the current_user's editor's document's text
   put '/documents', to: 'documents#update'

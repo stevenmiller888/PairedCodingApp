@@ -16,9 +16,9 @@
  */
 
 /* 
-  Using the http image may cause an issue in production when
-  on a https site.
+   CSS for Body and Row
  */
+
 body {
   background-image: url('http://i.imgur.com/j7KB8ov.png');
   color: white;
@@ -29,7 +29,7 @@ body {
   text-align: center;
 }
 
-/* Friendships Index CSS */
+/* CSS for Friendships Index */
 
 .friendships-img > img {
   width: 100px;
@@ -40,7 +40,7 @@ body {
   color: #BCD2EE;
 }
 
-/* Landing Page CSS  */
+/* CSS for Landing Page */
 
 .landing > h1 {
   color: #EEE5DE;
@@ -58,7 +58,7 @@ body {
   width: 75%;
 }
 
-/* Profile Page CSS  */
+/* CSS for Profile Page */
 
 .profile {
   text-align: center;
@@ -78,7 +78,7 @@ body {
   font-size: 16px;
 }
 
-/* Forms CSS */
+/* CSS for Forms */
 
 input[type=file]{
   display: inline;
@@ -101,7 +101,7 @@ input[type=file]{
   color: #BCD2EE;
 }
 
-/* Text editor CSS */
+/* CSS for Text editor */
 
 #editors {
   text-align: left;
@@ -136,7 +136,7 @@ input[type=file]{
   color: black;
 }
 
-/* Header navbar CSS */
+/* CSS for Header navbar */
 
 #navbar .navbar-right > li > a {
   color: #63B8FF;
@@ -159,7 +159,7 @@ input[type=file]{
   color: #458B74;
 }
 
-/* Footer navbar CSS */
+/* CSS for Footer navbar */
 
 html, body {
   position:inherit;
